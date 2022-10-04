@@ -4,14 +4,15 @@ import './App.css';
 import { Header } from './components/Header/Header';
 import { ProductList } from './components/ProductList/ProductList';
 import { Form } from './components/Form/Form';
-import { useTelegram } from './hooks/useTelegram';
+// import { useTelegram } from './hooks/useTelegram';
 
 
 function App() {
-  
-  const {tg} = useTelegram()
+
+  // const { tg } = useTelegram()
 
   useEffect(() => {
+    const tg = window.Telegram.WebApp
     tg.ready()
   }, [])
 
@@ -19,8 +20,8 @@ function App() {
     <div className="App">
       <Header>Заголовок</Header>
       <Routes>
-        <Route index element={<ProductList/>}></Route>
-        <Route path={'form'} element={<Form/>}></Route>
+        <Route index element={<ProductList />}></Route>
+        <Route path={'form'} element={<Form />}></Route>
       </Routes>
     </div>
   );
