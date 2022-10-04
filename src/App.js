@@ -1,20 +1,27 @@
 import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Header } from './components/Header/Header';
+import { ProductList } from './components/ProductList/ProductList';
+import { Form } from './components/Form/Form';
 import { useTelegram } from './hooks/useTelegram';
 
 
 function App() {
   
-  const {onToggleButton, tg} = useTelegram()
+  const {tg} = useTelegram()
 
   useEffect(() => {
     tg.ready()
-  }, [])
+  })
 
   return (
     <div className="App">
-      <h1>It's working</h1>
-      <button onClick={onToggleButton}>toggle-button</button>
+      <Header>Заголовок</Header>
+      <Routes>
+        <Route index element={<ProductList/>}></Route>
+        <Route path={'/form'} element={<Form/>}></Route>
+      </Routes>
     </div>
   );
 }
