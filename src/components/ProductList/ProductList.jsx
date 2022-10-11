@@ -30,7 +30,7 @@ export const ProductList = () => {
       queryId
     }
 
-      fetch('https://cheerful-licorice-a93e3b.netlify.app/web-data', {
+      fetch('https://whispering-harbor-13560.herokuapp.com/web-data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
