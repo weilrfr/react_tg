@@ -30,7 +30,7 @@ export const ProductList = () => {
       queryId
     }
 
-      fetch('https://cheerful-licorice-a93e3b.netlify.app', {
+      fetch('https://cheerful-licorice-a93e3b.netlify.app/web-data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
