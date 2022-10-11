@@ -1,11 +1,24 @@
 import React from 'react'
+import { Button } from '../Button/Button'
+import "./ProductCard.css"
 
-export const ProductCard = (props) => {
+export const ProductCard = ({product, className, onAdd}) => {
+
+  const onAddHandler = () => {
+    onAdd(product)
+  }
+
   return (
-    <div className={'ProductCard'}>
-        <img src={props.img} alt=""></h1>
-        <h1>{props.name}</h1>
-        <p>{props.description}</p>
+    <div className={'product ' + className}>
+      <div className={'img'}></div>
+      <div className={'title'}>{product.title}</div>
+      <div className={'description'}>{product.description}</div>
+      <div className={'price'}>
+        <span>Цена: <b>{product.price}</b></span>
+      </div>
+      <Button className={'add-btn'} onClick={onAddHandler}>
+        Добавить в корзину
+      </Button>
     </div>
   )
 }
