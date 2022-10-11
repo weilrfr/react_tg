@@ -3,6 +3,10 @@ import './ProductList.css'
 
 export const ProductList = () => {
   return (
-    <div>ProductList</div>
+    <div className={'ProductList'}>
+      <div >
+
+      </div>
+    </div>
   )
 }
