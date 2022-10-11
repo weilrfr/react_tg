@@ -20,14 +20,14 @@ export const Form = () => {
         }
 
         tg.sendData(JSON.stringify(data))
-    })
+    }, [tg, city, country, street, subject])
 
     useEffect(() => {
         tg.WebApp.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.WebApp.offEvent('mainButtonClicked', onSendData)
         }
-    }, [])
+    }, [tg, onSendData])
 
     useEffect(() => {
         const tg = window.Telegram.WebApp
