@@ -5,12 +5,26 @@ export const SpeedDialButton = ({products}) => {
     
     const actionItems = [
         { icon: 'pi pi-pencil', command: () => { } },
-        { icon: 'pi pi-calendar-plus', command: () => { } },
-        { icon: 'pi pi-image', command: () => { } },
-        { icon: 'pi pi-times', command: () => { } }
+        { icon: 'pi pi-cart-plus', command: () => { } },
+        { icon: 'pi pi-trash', command: () => { } },
     ];
 
-    
+    const addHelicopter = (data) => {
+        products.push(data)
+    }
+
+    const deleteHelicopter = (id) => {
+        products = products.filter(item => item.id !== id)
+    }
+
+    const updateHelicopter = (id, data) => {
+        products = products.map(item => {
+            if (item.id === id) {
+                return data
+            }
+            return item
+        })
+    }
 
     return (
         <div>
