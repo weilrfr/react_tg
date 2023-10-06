@@ -1,7 +1,7 @@
 import './SpeedDialButton.css';
 import { SpeedDial } from 'primereact/speeddial';
 
-export const SpeedDialButton = () => {
+export const SpeedDialButton = ({products}) => {
     
     const actionItems = [
         { icon: 'pi pi-pencil', command: () => { } },
@@ -9,6 +9,8 @@ export const SpeedDialButton = () => {
         { icon: 'pi pi-image', command: () => { } },
         { icon: 'pi pi-times', command: () => { } }
     ];
+
+    
 
     return (
         <div>
