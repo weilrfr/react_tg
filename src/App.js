@@ -5,6 +5,7 @@ import { Header } from './components/Header/Header';
 import { ProductList } from './components/ProductList/ProductList';
 import { Form } from './components/Form/Form';
 // import { useTelegram } from './hooks/useTelegram';
+import { SpeedDialButton } from './components/SpeedDialButton/SpeedDialButton';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route index element={<ProductList />}></Route>
         <Route path={'form'} element={<Form />}></Route>
       </Routes>
+      <SpeedDialButton />
     </div>
   );
 }
