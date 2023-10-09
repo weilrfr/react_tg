@@ -3,6 +3,8 @@ import { SpeedDial } from 'primereact/speeddial';
 import React, { useState } from "react";
 import { Dialog } from 'primereact/dialog';
 import { InputText } from "primereact/inputtext";
+import { ModalDelete } from '../Modals/ModalDelete';
+import { ModalEdit } from '../Modals/ModalEdit';
 
 
 export const SpeedDialButton = ({products}) => {
@@ -41,30 +43,8 @@ export const SpeedDialButton = ({products}) => {
     return (
         <div>
             <SpeedDial model={actionItems}  radius={120} type="quarter-circle" direction="down-left" style={{ right: 0, top: 0 }} buttonClassName="p-button-help" />
-            <div className="card flex justify-content-center">
-                <Dialog header="Введите ID для изменения" visible={visibleUpdate} style={{ width: '50vw' }} onHide={() => setVisibleUpdate(false)}>
-                    <span className="p-float-label">
-                        <InputText id="updateHel" value={updatevalue} onChange={(e) => updateSetValue(e.target.value)} />
-                        <label htmlFor="updateHel">id</label>
-                    </span>
-                </Dialog>
-            </div>
-            <div className="card flex justify-content-center">
-                <Dialog header="Новое объявление" visible={visibleAdd} style={{ width: '50vw' }} onHide={() => setVisibleAdd(false)}>
-                    <span className="p-float-label">
-                        <InputText id="addHel" value={addValue} onChange={(e) => addSetValue(e.target.value)} />
-                        <label htmlFor="addHel">Название</label>
-                    </span>
-                </Dialog>
-            </div>
-            <div className="card flex justify-content-center">
-                <Dialog header="Введите ID для удаления объявления" visible={visibleTrash} style={{ width: '50vw' }} onHide={() => setVisibleTrash(false)}>
-                    <span className="p-float-label">
-                        <InputText id="delHel" value={trashValue} onChange={(e) => trashSetValue(e.target.value)} />
-                        <label htmlFor="delHel">id</label>
-                    </span>
-                </Dialog>
-            </div>
+            <ModalDelete product={products} onChange={deleteHelicopter} visible={visibleTrash} setVisible={setVisibleTrash} />
+            <ModalEdit product={products} onChange={updateHelicopter} visible={visibleUpdate} setVisible={setVisibleUpdate} />
         </div>
     )
 }
