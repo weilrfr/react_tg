@@ -6,9 +6,6 @@ import { ProductList } from './components/ProductList/ProductList';
 import { Form } from './components/Form/Form';
 // import { useTelegram } from './hooks/useTelegram';
 import { SpeedDialButton } from './components/SpeedDialButton/SpeedDialButton';
-import { Practice } from './components/Practice/Practice';
-import { Button } from 'primereact/button';
-
 
 const products = [
   {id: '1', title: "Helicopter#1", price: 350000000, description: "Летает, не бит не крашен", image: "https://gtaman.ru/sites/default/files/styles/large/public/field/image/n4tiyp.jpg?itok=pZZPPjMP"},
@@ -31,8 +28,6 @@ function App() {
   return (
     <div className="App">
       <Header>Заголовок</Header>
-      <Button label="First"/>
-      <Button label="Trird" />
       <Routes>
         <Route index element={<ProductList products={ products }/>}></Route>
         <Route path={'form'} element={<Form />}></Route>
